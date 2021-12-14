@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Sign In System</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: rgb(19, 19, 19);
+      }
+      .download-button {
+        margin: 5% 1% 2% 0;
+        border-radius: 30px;
+        width: 150px;
+        position: relative;
+      }
+      .heading{
+          padding: 25px;
+          padding-bottom: 0;
+          margin-top: 150px;
+      }
+      .container{
+          width: 100%;
+      }
+      h1{
+          color: ivory;
+          animation-name: success;
+          animation-iteration-count: 1;
+          animation-duration: 2s;
+      }
+      @keyframes success {
+          from{
+              font-size: 0px;
+          }
+          to{
+              font-size: 40px;
+          }
+      }
+      footer{
+        width: 100%;
+        align-content: center;
+        text-align: center;
+        font-size: small;
+        color: rgba(187, 187, 187, 0.315);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <center>
+        <div class="col-lg-6 col-lg-12 heading">
+             <h1>Sucessfully! signed in...</h1>
+             <p>Click the below button to see the members of this club!</p>
+        </div>
+        <div class="col-lg-6 col-lg-12 btn-div">
+          <center>
+            <form action="/main" method="POST">
+            <button
+              class="btn btn-lg btn-outline-light download-button"
+              type="submit"
+            >
+              Members <i class="fas fa-users"></i>
+            </button>
+          </form>
+          </center>
+        </div>
+    </center>
+    </div>
+    <footer>
+      <p>Copyright 2021 @ Anurag Kumar</p>
+    </footer>
+  </body>
+</html>

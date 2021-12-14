@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <title>Sign In System</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: rgb(19, 19, 19);
+      width: 100%;
+    }
+    form {
+      border: 0.9px solid #2e2d2d;
+      width: 300px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: white;
+      font-size: small;
+      margin-top: 50px;
+      text-align: left;
+      border-radius: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+    }
+
+    img.avatar {
+      width: 40%;
+      border-radius: 50%;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+
+    @media screen and (max-width: 300px) {
+      span.psw {
+        display: block;
+        float: none;
+      }
+      .cancelbtn {
+        width: 100%;
+      }
+    }
+    h1 {
+      color: ivory;
+      padding-top: 100px;
+      font: size 200px;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    }
+  </style>
+
+  <body>
+    <center>
+      <h1>Mozilla Firefox - VIT Bhopal</h1>
+      <p
+        style="
+          color: #2e2d2d;
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+            'Lucida Sans Unicode', Geneva, Verdana, sans-serif; line-height: 1px;
+        "
+      >
+        SignIn if you are already a member of this club!
+      </p>
+      <form action="/signin" method="POST">
+        <div class="container">
+
+          <label>Email</label>
+          <input
+            type="text"
+            placeholder="Enter Email ID"
+            name="ename"
+            required
+          />
+
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="psw"
+            required
+          />
+
+          <button type="submit">Sign In</button>
+          <input type="checkbox" checked="checked" /> Remember me
+        </div>
+      </form>
+    </center>
+  </body>
+</html>
