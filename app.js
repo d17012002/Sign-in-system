@@ -1,43 +1,19 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const db = require(__dirname + "/mongoDB.js");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
-const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://webconnect:webconnect123@cluster0.tnchb.mongodb.net/firefoxDB");
 
-var key;
 
-const firefoxSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "name is compulsory"],
-  },
-  email: {
-    type: String,
-    required: [true, "email is compulsory"],
-  },
-  password: {
-    type: String,
-    required: [true, "password is compulsory"],
-  },
-});
 
-const FirefoxUser = mongoose.model("FirefoxUser", firefoxSchema);
-
-const Anurag = new FirefoxUser({
-  name: "Anurag Kumar",
-  email: "anuragkumar2020@vitbhopal.ac.in",
-  password: "anurag123",
-});
-
-const defaultArray = [Anurag];
 
 app.get("/", function (req, res) {
-  FirefoxUser.find(function (err, firefoxusers) {
+  db.FirefoxUser.find(function (err, firefoxusers) {
     if (firefoxusers.length === 0) {
-      Anurag.save();
+      db.Anurag.save();
       console.log("Default users added");
     }
     if (err) {
@@ -80,7 +56,7 @@ app.post("/", function (req, res) {
 app.post("/signin", function (req, res) {
     var Email = req.body.ename;
     var Pass = req.body.psw;
-    FirefoxUser.find({email: Email}, function(err, firefoxusers){
+    db.FirefoxUser.find({email: Email}, function(err, firefoxusers){
         if(err){
             console.log(err);
         }
@@ -102,7 +78,7 @@ app.post("/signup", function (req, res) {
   var NAME = req.body.name;
   var EMAIL = req.body.email;
   var PASSWORD = req.body.psw;
-  const newFirefoxUser = new FirefoxUser({
+  const newFirefoxUser = new db.FirefoxUser({
     name: NAME,
     email: EMAIL,
     password: PASSWORD,
@@ -116,7 +92,7 @@ app.post("/main", function (req, res) {
   });
 
 app.get("/users", function (req, res) {
-    FirefoxUser.find(function(err, firefoxusers){
+    db.FirefoxUser.find(function(err, firefoxusers){
         if(err){
             console.log(err);
         }else{
