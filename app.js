@@ -6,10 +6,6 @@ const db = require(__dirname + "/mongoDB.js");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
-
-
-
-
 app.get("/", function (req, res) {
   db.FirefoxUser.find(function (err, firefoxusers) {
     if (firefoxusers.length === 0) {
